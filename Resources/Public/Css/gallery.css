@@ -14,6 +14,7 @@ body, .body-bg {
     margin: 0;
     padding: 0;
     background-color: var(--body-bkgd-color) !important;
+    font-family: 'Libre Franklin', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -81,8 +82,8 @@ figure .caption {
 .navbar-mainnavigation {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.15);
     padding: 0;
-    font-weight:600;
-    font-size: 1.2rem;
+    font-weight:500;
+    font-size: 1.1rem;
 }
 
 .navbar-toggler {
@@ -116,7 +117,7 @@ figure .caption {
     width: 215px;
     visibility: visible;
     opacity:1;
-    z-index:5;
+    z-index:6;
 }
 
 .nav-item {
@@ -225,12 +226,6 @@ a.nav-link:hover > .nav-link-text {
     max-width: 55px;
 }
 
-.switch-logo:hover {
-  margin:0;
-  padding:0;
-/*  filter: invert(.375) sepia(1) saturate(3.6) hue-rotate(11deg);*/
-}
-
 .st0:hover {
     fill:var(--menu-rollover-color);
 }
@@ -246,6 +241,9 @@ a.nav-link:hover > .nav-link-text {
 
 .breadcrumb-section {
     background-color: transparent;
+    margin-top: -40px;
+    margin-right: 10px;
+    z-index:5;
 }
 
 .breadcrumb {
@@ -290,6 +288,13 @@ a.nav-link:hover > .nav-link-text {
 /**********************/
 /*****    CARD    *****/
 /**********************/
+.card-header {
+    padding: 0.5rem 1rem;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    border-bottom:none;
+}
 
 .card a:not(.btn) {
     color: var(--menu-rollover-color);
@@ -301,7 +306,7 @@ a.nav-link:hover > .nav-link-text {
 }
 
 .card .btn-text {
-    font-size: 45px;
+    font-size: 40px;
     font-weight: 600;
     color: var(--menu-rollover-color);
 }
@@ -314,12 +319,12 @@ a.nav-link:hover > .nav-link-text {
     flex: 1 1 auto;
     min-height: 1px;
     padding: 1rem;
-    padding-bottom:0;
     margin:0;
 }
 
 .card-body p {
-    line-height:20px;
+    line-height:18px;
+    font-size:.9rem;
 }
 
 .card-group-element-item .card-body + .card-footer {
@@ -334,10 +339,29 @@ a.nav-link:hover > .nav-link-text {
 }
 
 a.btn-primary, a.btn-primary:hover {
-    background-color:#ffffff;
-    border-color:#ffffff;
+    background-color:transparent;
+    border-color:transparent;
 }
 
+.card-title {
+    margin:0;
+    padding:0;
+}
+
+.card-group-element {
+    margin: -16px -32px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-group-element-item {
+    width: 100%;
+    padding: 16px 32px;
+}
+
+#p18 .card-body {
+    display:none;
+}
 /***** END OF CARD *****/
 
 /*************************/
@@ -350,12 +374,12 @@ a.btn-primary, a.btn-primary:hover {
 
 .pswp__ui--fit .pswp__top-bar,
 .pswp__ui--fit .pswp__caption {
- background-color:#7c939b;
+ background-color: var(--menu-rollover-color);
 }
 
 .pswp__caption__title {
   font-style:italic;
-  font-weight:700;
+  font-weight:600;
 }
 
 .pswp__caption__center,
@@ -365,8 +389,17 @@ a.btn-primary, a.btn-primary:hover {
 }
 
 .pswp__top-bar, .pswp__caption {
-  background-color: #7c939b;
+  background-color: var(--menu-rollover-color);
   opacity:0.85;
+}
+
+.pswp__button--arrow--left::before, .pswp__button--arrow--right::before {
+    content: '';
+    top: 35px;
+    background-color: var(--menu-rollover-color);
+    height: 30px;
+    width: 32px;
+    position: absolute;
 }
 
 /**** END OF LIGHTBOX ****/
@@ -426,9 +459,46 @@ a:focus {
   text-decoration: none;
 }
 
+/*****  CAROUSEL  *****/
+
 .container .carousel {
   margin:0;
   padding:0;
+}
+
+.carousel .carousel-control-icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    width: auto;
+    height: auto;
+    color: var(--body-bkgd-color);
+    padding: 1em;
+    background-color: transparent;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none;
+}
+
+.carousel .carousel-control-icon::before {
+    transform: rotate(45deg);
+    content: '';
+    width: 1.8em;
+    height: 1.8em;
+    display: block;
+    border-top: 2px solid var(--body-bkgd-color);
+    border-right: 2px solid var(--body-bkgd-color);
+}
+
+.carousel .carousel-control-prev .carousel-control-icon::before {
+    transform: rotate(225deg) skew(200deg,200deg);
+}
+
+.carousel .carousel-control-next .carousel-control-icon::before {
+    transform: rotate(45deg) skew(20deg,20deg);
 }
 
 /* Page uid 18 */
@@ -440,6 +510,8 @@ a:focus {
     height: 800px;
 }
 }
+
+/**** END CAROUSEL ****/
 
 #p22 .caption,
 #p23 .caption,
@@ -567,6 +639,10 @@ a:focus {
   color:#7c939b;
 }
 
+.row .news-list-item .col-md-12 {
+    margin-bottom:3px;
+}
+
 /*************************/
 /** NEWS MEDIA QUERIES ***/
 /*************************/
@@ -605,7 +681,7 @@ a:focus {
   height:auto;
 }
 h4 {
-  font-size: 1em;
+  font-size: .8rem;
 }
 .news-list-view p {
   margin:3px 0 0 0;
@@ -666,7 +742,7 @@ h4 {
   flex:0 0 49.3%;
 }
 h4 {
-  font-size: 1em;
+  font-size: .8rem;
 }
 .news-list-view p {
   margin:3px 0 0 0;
@@ -726,7 +802,7 @@ h4 {
   flex: 0 0 32.7%;
 }
 h4 {
-  font-size: 1em;
+  font-size: .8rem;
 }
 .news-list-view p {
   margin:3px 0 0 0;
@@ -799,7 +875,7 @@ h4 {
   flex: 0 0 32.7%;
 }
 h4 {
-  font-size: 1.2em;
+  font-size: .96rem;
 }
 .news-list-view p {
   margin:3px 0 0 0;
@@ -865,7 +941,7 @@ h4 {
   flex: 0 0 32.7%;
 }
 h4 {
-  font-size: 1.3em;
+  font-size: 1rem;
 }
 .news-list-item .lead {
     margin-bottom: 24px;

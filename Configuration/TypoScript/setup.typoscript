@@ -11,6 +11,9 @@
 #### PAGE ####
 ##############
 page {
+    includeCSSLibs {
+        googlewebfont = https://fonts.googleapis.com/css?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900
+    }
     includeCSS {
         theme = EXT:artmediagalleryx/Resources/Public/Scss/Theme/theme.scss
         gallery_layout = EXT:artmediagalleryx/Resources/Public/Css/gallery.css
@@ -296,3 +299,72 @@ page {
     }
 }
 
+
+page.headerData.2020 = FLUIDTEMPLATE
+page.headerData.2020 {
+	file = EXT:artmediagalleryx/Resources/Private/Templates/Favicons.html
+ 	extbase.controllerExtensionName = artmediagalleryx
+}
+
+lib.contentElement.settings.responsiveimages.variants {
+    default {
+        breakpoint = 1200
+        width = 1100
+        sizes {
+            1\.5x {
+                multiplier = 1.5
+            }
+            2x {
+                multiplier = 2
+            }
+        }
+    }
+    large {
+        breakpoint = 992
+        width = 920
+        sizes {
+            1\.5x {
+                multiplier = 1.5
+            }
+            2x {
+                multiplier = 2
+            }
+        }
+    }
+    medium {
+        breakpoint = 768
+        width = 680
+        sizes {
+            1\.5x {
+                multiplier = 1.5
+            }
+            2x {
+                multiplier = 2
+            }
+        }
+    }
+    small {
+        breakpoint = 576
+        width = 500
+        sizes {
+            1\.5x {
+                multiplier = 1.5
+            }
+            2x {
+                multiplier = 2
+            }
+        }
+    }    
+    extrasmall {
+        breakpoint = unset
+        width = 374
+        sizes {
+            1\.5x {
+                multiplier = 1.5
+            }
+            2x {
+                multiplier = 2
+            }
+        }
+    }
+}
