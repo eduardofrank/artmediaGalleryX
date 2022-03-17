@@ -56,7 +56,10 @@ plugin.bootstrap_package_contentelements {
 ################################
 plugin.bootstrap_package.settings.scss.grid-float-breakpoint = 9999px
 plugin.tx_felogin_pi1.storagePid = 0
-plugin.tx_news.view.twb.templateRootPath = EXT:artmediagalleryx/Resources/Private/Templates/Styles/Twb/Templates
+#plugin.tx_news.view.templateRootPath = EXT:artmediagalleryx/Resources/Private/Templates/
+#plugin.tx_news.view.partialRootPath = EXT:artmediagalleryx/Resources/Private/Partials/
+#plugin.tx_news.view.layoutRootPath = EXT:artmediagalleryx/Resources/Private/Layouts/
+plugin.tx_news.view.twb.templateRootPath = EXT:artmediagalleryx/Resources/Private/Templates/Styles/Twb/Templates/
 plugin.tx_news.view.twb.partialRootPath = EXT:artmediagalleryx/Resources/Private/Templates/Styles/Twb/Partials/
 plugin.tx_news.view.twb.layoutRootPath = EXT:artmediagalleryx/Resources/Private/Templates/Styles/Twb/Layouts/
 page.includePath.icons = EXT:artmediagalleryx/Resources/Public/Icons/
